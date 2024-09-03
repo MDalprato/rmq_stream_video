@@ -8,7 +8,7 @@ from kombu import Connection, Exchange, Queue
 from kombu.mixins import ConsumerMixin
 
 # Default RabbitMQ server URI
-rabbit_url = 'amqp://guest:guest@localhost:5672//'
+rabbit_url = os.environ.get('RABBIT_URL', 'amqp://hypernode:hypernode@localhost:5672//')
 
 # Kombu Message Consuming Worker
 class Worker(ConsumerMixin):

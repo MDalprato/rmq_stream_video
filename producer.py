@@ -12,9 +12,10 @@ import sys
 import time
 
 import cv2
+import os
 
 # Default RabbitMQ server URI
-rabbit_url = 'amqp://guest:guest@localhost:5672//'
+rabbit_url = os.environ.get('RABBIT_URL', 'amqp://hypernode:hypernode@localhost:5672//')
 
 # Kombu Connection
 conn = Connection(rabbit_url)
